@@ -1,20 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start" class="search-wrapper">
+      <ion-searchbar class="header-search" placeholder="Search Shopee..."></ion-searchbar>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="chatbubble-ellipses-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Pinterest-style Shopee product grid -->
+  <div class="shopee-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="Product Image" />
+      <div class="product-info">
+        <p class="name">{{ product.name }}</p>
+        <p class="price">₱{{ product.price }}</p>
+      </div>
+    </div>
   </div>
+
 </ion-content>
+
+<!-- Bottom Tab Bar -->
+<ion-footer>
+  <ion-tab-bar slot="bottom" color="light">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="mall">
+      <ion-icon name="bag-handle-outline"></ion-icon>
+      <ion-label>Mall</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="live">
+      <ion-icon name="tv-outline"></ion-icon>
+      <ion-label>Live</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notifications">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-label>Notifications</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Me</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
