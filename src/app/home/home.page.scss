@@ -1,58 +1,87 @@
-/* Searchbar inside header styling */
+ion-toolbar {
+  --background: #ffffff;
+  --color: #000;
+}
+
 .search-wrapper {
   flex: 1;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
 }
 
 .header-search {
   flex: 1;
-  width: 285px;
+  width: 300px;
   --border-radius: 10px;
   --box-shadow: none;
-  --background: #ffffff;
+  --background: #f1f1f1;
   --color: #000;
   --placeholder-color: #999;
   padding-inline-start: 0;
   padding-inline-end: 0;
-  margin-inline-start: 8px;
 }
 
-
-/* Shopee-style Pinterest product grid */
-.shopee-grid {
+/* 🧱 Pinterest-style Masonry Grid */
+.masonry-grid {
   column-count: 2;
-  column-gap: 10px;
-  padding: 10px;
+  column-gap: 8px;
+  padding: 8px;
 }
 
 .product-card {
-  break-inside: avoid;
-  margin-bottom: 10px;
-  background: #fff;
+  background: #ffffff;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .product-card img {
   width: 100%;
+  height: auto;
   display: block;
-  border-bottom: 1px solid #f1f1f1;
+  object-fit: cover;
 }
 
 .product-info {
-  padding: 10px;
+  padding: 8px;
 }
 
 .name {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
   color: #212121;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .price {
   color: #ee4d2d;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.stars ion-icon {
+  font-size: 12px;
+  color: #faca15;
+  margin-right: 1px;
+}
+
+/* 🧭 Shopee Tab Bar */
+.shopee-tab-bar {
+  --background: #ffffff;
+  --color: #888888;
+  --color-selected: #ee4d2d;
+  --border: 1px solid #e5e5e5;
+}
+
+ion-tab-button {
+  font-size: 11px;
+}
+
+ion-tab-button ion-icon {
+  font-size: 18px;
 }

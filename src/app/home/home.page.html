@@ -5,10 +5,10 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button fill="clear">
+      <ion-button fill="clear" routerLink="/tabs/cart">
         <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
       </ion-button>
-      <ion-button fill="clear">
+      <ion-button fill="clear" routerLink="/tabs/chat">
         <ion-icon slot="icon-only" name="chatbubble-ellipses-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -16,44 +16,74 @@
 </ion-header>
 
 <ion-content>
+  <div class="masonry-grid">
 
-  <!-- Pinterest-style Shopee product grid -->
-  <div class="shopee-grid">
-    <div class="product-card" *ngFor="let product of products">
-      <img [src]="product.image" alt="Product Image" />
+    <div class="product-card">
+      <img src="assets/img/item1.jpg" alt="Wireless Earbuds" />
       <div class="product-info">
-        <p class="name">{{ product.name }}</p>
-        <p class="price">₱{{ product.price }}</p>
+        <p class="name">Wireless Earbuds</p>
+        <p class="price">₱799</p>
+        <div class="stars">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star-half"></ion-icon>
+        </div>
       </div>
     </div>
-  </div>
 
+    <div class="product-card">
+      <img src="assets/img/item2.jpg" alt="Shockproof Case" />
+      <div class="product-info">
+        <p class="name">Shockproof Phone Case</p>
+        <p class="price">₱129</p>
+        <div class="stars">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/img/item3.jpg" alt="Bluetooth Speaker" />
+      <div class="product-info">
+        <p class="name">Bluetooth Speaker</p>
+        <p class="price">₱459</p>
+        <div class="stars">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </ion-content>
 
-<!-- Bottom Tab Bar -->
 <ion-footer>
-  <ion-tab-bar slot="bottom" color="light">
-    <ion-tab-button tab="home">
+  <ion-tab-bar slot="bottom" class="shopee-tab-bar">
+    <ion-tab-button routerLink="/home">
       <ion-icon name="home-outline"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="mall">
-      <ion-icon name="bag-handle-outline"></ion-icon>
-      <ion-label>Mall</ion-label>
+    <ion-tab-button routerLink="/tabs/mall">
+      <ion-icon name="cart-outline"></ion-icon>
+      <ion-label>Cart</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="live">
-      <ion-icon name="tv-outline"></ion-icon>
-      <ion-label>Live</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="notifications">
+    <ion-tab-button routerLink="/tabs/notifications">
       <ion-icon name="notifications-outline"></ion-icon>
       <ion-label>Notifications</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="profile">
+    <ion-tab-button routerLink="/tabs/profile">
       <ion-icon name="person-outline"></ion-icon>
       <ion-label>Me</ion-label>
     </ion-tab-button>
